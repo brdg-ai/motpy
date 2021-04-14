@@ -273,7 +273,7 @@ class MultiObjectTracker:
             cond2 = tracker.staleness < max_staleness
             cond3 = tracker.steps_alive >= min_steps_alive
             if cond1 and cond2 and cond3:
-                tracks.append(Track(id=tracker.id, box=tracker.box, score=tracker.score))
+                tracks.append(Track(id=tracker.id, box=tracker.box, score=tracker.score, feature=tracker.feature))
 
         logger.debug('active/all tracks: %d/%d' % (len(self.trackers), len(tracks)))
         return tracks
